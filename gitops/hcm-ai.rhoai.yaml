@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hcm-ai-rhoai
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: in-cluster
+  project: default
+  source:
+    path: rhods-operator/operator/overlays/fast
+    repoURL: 'https://github.com/redhat-cop/gitops-catalog'
+    targetRevision: HEAD
