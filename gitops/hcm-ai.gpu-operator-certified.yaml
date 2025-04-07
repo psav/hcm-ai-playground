@@ -9,5 +9,5 @@ spec:
   project: default
   source:
     path: gpu-operator-certified/operator/overlays/stable
-    repoURL: 'https://github.com/redhat-cop/gitops-catalog'
-    targetRevision: HEAD
+    repoURL: 'https://github.com/app-sre/hcm-ai-playground'
+    targetRevision: main

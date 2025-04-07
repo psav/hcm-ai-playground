@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hcm-ai-rhoai
+  name: hcm-ai-servicemesh-operator
   namespace: openshift-gitops
 spec:
   destination:
     name: in-cluster
   project: default
   source:
-    path: rhods-operator/operator/overlays/fast
+    path: openshift-servicemesh/operator/overlays/stable
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
