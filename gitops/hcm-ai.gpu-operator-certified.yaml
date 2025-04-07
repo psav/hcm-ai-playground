@@ -8,6 +8,11 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: gpu-operator-certified/aggregate/overlays/default
+    path: operators/gpu-operator-certified/aggregate/overlays/default
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
+      allowEmpty: false
+    prune: false

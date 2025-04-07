@@ -8,6 +8,11 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: rhods-operator/operator/overlays/fast
+    path: operators/rhods-operator/operator/overlays/fast
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
+      allowEmpty: false
+    prune: false

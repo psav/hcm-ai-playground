@@ -8,6 +8,11 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: advanced-cluster-management/operator/overlays/release-2.12
+    path: operators/advanced-cluster-management/operator/overlays/release-2.12
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
+      allowEmpty: false
+    prune: false

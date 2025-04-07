@@ -8,6 +8,11 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: authorino-operator/operator/overlays/stable
+    path: operators/authorino-operator/operator/overlays/stable
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
+      allowEmpty: false
+    prune: false
