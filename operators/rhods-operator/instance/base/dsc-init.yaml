@@ -10,7 +10,7 @@ spec:
   serviceMesh:
     auth:
       audiences:
-        - ''  
+        - AUDIENCES_VALUE
     controlPlane:
       metricsCollection: Istio
       name: data-science-smcp
