@@ -23,5 +23,5 @@ patches:
   target:
     kind: DSCInitialization
     group: dscinitialization.opendatahub.io/v1
-    name: default-dsc
+    name: default-dsci
     

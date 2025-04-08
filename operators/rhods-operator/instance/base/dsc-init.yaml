@@ -1,7 +1,7 @@
 apiVersion: dscinitialization.opendatahub.io/v1
 kind: DSCInitialization
 metadata:
-  name: default-dsc
+  name: default-dsci
 spec:
   applicationsNamespace: redhat-ods-applications
   monitoring:
