@@ -19,7 +19,7 @@ components:
   - ../../../components/rhoai-dashboard-access
 
 patches:
-- path: ./patch.rehoboam.yaml
+- path: ./patch.hcmaii01ue1.yaml
   target:
     kind: DSCInitialization
     group: dscinitialization.opendatahub.io/v1
