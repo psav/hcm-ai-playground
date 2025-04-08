@@ -16,8 +16,6 @@ metadata:
     opendatahub.io/dashboard: 'true'
 spec:
   predictor:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
     maxReplicas: 1
     minReplicas: 1
     model:
