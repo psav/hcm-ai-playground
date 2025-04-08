@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hcm-ai-serverless-operator
-  namespace: openshift-gitops
+  namespace: maas-config
 spec:
   destination:
     name: in-cluster
