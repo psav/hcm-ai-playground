@@ -21,3 +21,4 @@ spec:
       namespace: nvidia-gpu-operator
       port: 9443
       basePath: '/'
+    type: Service
