@@ -1,0 +1,3 @@
+- op: replace 
+  path: /spec/serviceMesh/auth/audiences/0
+  value: https://oidc.op1.openshiftapps.com/2htsl8ocfr4uq8el657k9ffs8qlmofk2 
