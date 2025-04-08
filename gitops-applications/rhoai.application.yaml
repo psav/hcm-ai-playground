@@ -8,6 +8,7 @@ spec:
     name: in-cluster
   project: default
   source:
+    path: operators/rhods-operator/aggregate/overlays/fast-nvidia-gpu
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
   syncPolicy:
