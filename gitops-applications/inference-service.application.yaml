@@ -16,6 +16,3 @@ spec:
       selfHeal: true
       allowEmpty: false
     prune: false
-  ignoreDifferences:
-  - group: "route.openshift.io"
-    kind: Route
