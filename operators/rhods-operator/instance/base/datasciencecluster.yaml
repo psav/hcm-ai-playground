@@ -7,7 +7,7 @@ spec:
     codeflare:
       managementState: Removed
     kserve:
-      managementState: Removed
+      managementState: Managed
       serving:
         ingressGateway:
           certificate:
