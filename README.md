@@ -25,6 +25,19 @@ The repository is structured as follows:
 To stand up a new replica of the AI Playground based on this repository, you must do the following:
 1. Provision an OpenShift Cluster with at least one GPU-Accelerated Node (Note: this repository, by default, enables the NVIDIA GPU Operator, if you want to leverage AMD GPUs, you need to install AMD's GPU Operator)
 2. Install the [OpenShift GitOps Operator](https://docs.redhat.com/en/documentation/red_hat_openshift_gitops/1.16/html/installing_gitops/installing-openshift-gitops) on your cluster (or ArgoCD (https://argo-cd.readthedocs.io/en/stable/getting_started/) if you prefer).  
+    1. You will need to enable OpenShift GitOps or ArgoCD in cluster-wide mode because our applications reside in multiple namespaces.  OpenShift GitOps automatically deploys in cluster-wide mode if deployed in the openshift-gitops (default) namespace.  
+    2. You need to modify your ArgoCD Custom Resource configuration to enable ArgoCD to reconcile Applications from all namespace - make sure to do the following:
+        1. Edit the ArgoCD Instance and add the following to both `spec.server` and `spec.controller`: 
+        ```
+        extraCommandArgs:
+        - '--application-namespaces=*'
+        ```
+        2. Edit the Default AppProject CR to include the following in its `spec`:
+        ```
+        sourceNamespaces:
+            - '*'
+        ```
+    3. For every namespace that you want ArgoCD to work in, you will need to apply a label as follows: `oc label namespace <namespace-name> argocd.argoproj.io/managed-by=<namespace-of-the-argocd-instance>`
 3. `oc apply` the ClusterRoles and ClusterRoleBindings in the `patch/argocd-permissions` directory to give the ArgoCD ServiceAccount the necessary fine-grained permissions necessary to deploy all of the operators
 4. `oc apply -f gitops-applications/*.yaml` to install all of the operators and workload onto your cluster
 5. Navigate to the ArgoCD UI on your cluster and verify that the Applications reconcile correctly.  
