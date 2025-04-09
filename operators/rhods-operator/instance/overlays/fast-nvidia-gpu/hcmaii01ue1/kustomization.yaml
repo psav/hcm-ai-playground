@@ -22,6 +22,7 @@ patches:
 - path: ./patch.hcmaii01ue1.yaml
   target:
     kind: DSCInitialization
-    group: dscinitialization.opendatahub.io/v1
+    group: dscinitialization.opendatahub.io
+    version: v1
     name: default-dsci
     
