@@ -2,7 +2,6 @@ kind: ClusterPolicy
 apiVersion: nvidia.com/v1
 metadata:
   name: gpu-cluster-policy
-  namespace: nvidia-gpu-operator
 spec:
   operator:
     defaultRuntime: crio
@@ -13,6 +12,7 @@ spec:
     defaultWorkload: container
   driver:
     enabled: true
+    useNvidiaDriverCRD: false
     upgradePolicy:
       autoUpgrade: true
       drain:
@@ -20,6 +20,7 @@ spec:
         enable: false
         force: false
         timeoutSeconds: 300
+      kernelModuleType: auto
       maxParallelUpgrades: 1
       maxUnavailable: 25%
       podDeletion:
@@ -33,7 +34,7 @@ spec:
     certConfig:
       name: ''
     licensingConfig:
-      nlsEnabled: false
+      nlsEnabled: true
       configMapName: ''
     virtualTopology:
       config: ''
@@ -42,7 +43,7 @@ spec:
   dcgmExporter:
     enabled: true
     config:
-      name: 'console-plugin-nvidia-gpu'
+      name: ''
     serviceMonitor:
       enabled: true
   dcgm:
@@ -51,15 +52,13 @@ spec:
     updateStrategy: RollingUpdate
     rollingUpdate:
       maxUnavailable: '1'
-    tolerations:
-      - effect: NoSchedule
-        key: nvidia-gpu-only
-        operator: Exists
   devicePlugin:
     enabled: true
     config:
       name: ''
       default: ''
+    mps:
+      root: /run/nvidia/mps
   gfd:
     enabled: true
   migManager:
@@ -74,7 +73,7 @@ spec:
     plugin:
       env:
         - name: WITH_WORKLOAD
-          value: 'true'
+          value: 'false'
   vgpuManager:
     enabled: false
   vgpuDeviceManager:
@@ -84,4 +83,6 @@ spec:
   vfioManager:
     enabled: true
   gds:
+    enabled: false
+  gdrcopy:
     enabled: false
