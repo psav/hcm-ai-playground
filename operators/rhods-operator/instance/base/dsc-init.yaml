@@ -11,6 +11,7 @@ spec:
     auth:
       audiences:
         - AUDIENCES_VALUE
+        - 'https://kubernetes.default.svc'
     controlPlane:
       metricsCollection: Istio
       name: data-science-smcp
