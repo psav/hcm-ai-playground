@@ -6,3 +6,6 @@ resources:
   - inference-service.yaml
   - serving-runtime.yaml
   - default-mistral-sa.secret.yaml
+  - default-sa.sa.yaml
+  - role.yaml
+  - role-binding.yaml
