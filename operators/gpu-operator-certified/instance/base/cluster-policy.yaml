@@ -16,13 +16,12 @@ spec:
     upgradePolicy:
       autoUpgrade: true
       drain:
-        deleteEmptyDir: false
-        enable: false
+        deleteEmptyDir: true
+        enable: true
         force: false
         timeoutSeconds: 300
-      kernelModuleType: auto
       maxParallelUpgrades: 1
-      maxUnavailable: 25%
+      maxUnavailable: 50%
       podDeletion:
         deleteEmptyDir: false
         force: false
