@@ -5,5 +5,5 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true
   name: odh-dashboard-config
 spec:
-  nodebookController:
+  notebookController:
     enabled: true
