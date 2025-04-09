@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rhoai
-  # namespace: maas-config
+  name: hcm-ai-rhoai
+  namespace: maas-config
 spec:
   destination:
     name: in-cluster

@@ -1,4 +1,4 @@
-# HCM AI Playground Platform Definition and GitOps 
+# HCM AI Playground Platform Definition and GitOps
 
 ## Introduction
 
