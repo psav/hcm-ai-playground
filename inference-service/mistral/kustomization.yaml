@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - inference-service.yaml
   - serving-runtime.yaml
+  - default-mistral-sa.secret.yaml
