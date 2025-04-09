@@ -5,4 +5,5 @@ metadata:
     openshift.io/display-name: "NVIDIA GPU Operator"
   labels:
     openshift.io/cluster-monitoring: 'true'
+    argocd.argoproj.io/managed-by: openshift-gitops
   name: nvidia-gpu-operator
