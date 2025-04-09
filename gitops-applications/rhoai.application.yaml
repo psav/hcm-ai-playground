@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hcm-ai-rhoai
-  namespace: maas-config
+  # namespace: maas-config
 spec:
   destination:
     name: in-cluster
@@ -16,4 +16,3 @@ spec:
       selfHeal: true
       allowEmpty: false
     prune: false
-
