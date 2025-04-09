@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hcm-ai-gpu-operator-certified
-  namespace: maas-config
+  # namespace: maas-config
 spec:
   destination:
     name: in-cluster
