@@ -4,6 +4,3 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: ServerSideApply=true
   name: odh-dashboard-config
-spec:
-  notebookController:
-    enabled: true
