@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: multicluster-observabilities-argocd-cluster-resources-admin
+rules:
+  - apiGroups: 
+      - "observability.open-cluster-management.io"
+    resources: 
+      - "*"
+    verbs: 
+      - "*"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: multicluster-observabilities-argocd-cluster-resources-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: multicluster-observabilities-argocd-cluster-resources-admin
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
