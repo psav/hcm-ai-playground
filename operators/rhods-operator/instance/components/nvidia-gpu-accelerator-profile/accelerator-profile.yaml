@@ -1,10 +1,10 @@
 apiVersion: dashboard.opendatahub.io/v1
 kind: AcceleratorProfile
 metadata:
-  name: nvidia-gpu
+  name: nvidia-gpu-a10g
   namespace: redhat-ods-applications
 spec:
-  displayName: nvidia-gpu
+  displayName: nvidia-gpu-a10g
   enabled: true
   identifier: nvidia.com/gpu
   tolerations:
@@ -15,4 +15,4 @@ spec:
     - effect: NoSchedule
       key: nvidia.com/gpu
       operator: Exists
-      value: ''
+      value: 'A10G'
