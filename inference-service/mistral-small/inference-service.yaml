@@ -20,10 +20,6 @@ spec:
     minReplicas: 1
     model:
       args:
-        - '--max-model-len'
-        - '20480'
-        - '--gpu-memory-utilization'
-        - '0.95'
         - '--tokenizer_mode'
         - 'mistral'
         - '--config_format'
@@ -31,10 +27,7 @@ spec:
         - '--load_format'
         - 'mistral'
         - '--limit_mm_per_prompt'
-        - 'image=10'
-        - '--tensor-parallel-size'
-        - '2'
-
+        - 'image=4'
       modelFormat:
         name: vLLM
       name: ''
