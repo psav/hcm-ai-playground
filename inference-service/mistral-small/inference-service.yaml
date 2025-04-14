@@ -16,7 +16,6 @@ metadata:
     opendatahub.io/dashboard: 'true'
 spec:
   predictor:
-    timeout: 1200
     maxReplicas: 1
     minReplicas: 1
     model:
@@ -49,3 +48,5 @@ spec:
         key: nvidia.com/gpu
         operator: Equal
         value: L40S
+    annotations:
+      serving.knative.dev/progress-deadline: 30m
