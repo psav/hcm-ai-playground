@@ -19,15 +19,15 @@ spec:
     maxReplicas: 1
     minReplicas: 1
     model:
-      args:
-        - '--tokenizer-mode'
-        - 'mistral'
-        - '--config-format'
-        - 'mistral'
-        - '--load-format'
-        - 'mistral'
-        - '--limit-mm-per-prompt'
-        - 'image=4'
+      # args:
+      #   - '--tokenizer-mode'
+      #   - 'mistral'
+      #   - '--config-format'
+      #   - 'mistral'
+      #   - '--load-format'
+      #   - 'mistral'
+      #   - '--limit-mm-per-prompt'
+      #   - 'image=4'
       modelFormat:
         name: vLLM
       name: ''
