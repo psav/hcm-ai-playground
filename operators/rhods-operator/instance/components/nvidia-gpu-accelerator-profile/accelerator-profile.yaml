@@ -16,3 +16,22 @@ spec:
       key: nvidia.com/gpu
       operator: Equal
       value: 'A10G'
+---
+apiVersion: dashboard.opendatahub.io/v1
+kind: AcceleratorProfile
+metadata:
+  name: nvidia-gpu-l40s
+  namespace: redhat-ods-applications
+spec:
+  displayName: nvidia-gpu-l40s
+  enabled: true
+  identifier: nvidia.com/gpu
+  tolerations:
+    - effect: NoSchedule
+      key: nvidia-gpu-only
+      operator: Exists
+      value: ''
+    - effect: NoSchedule
+      key: nvidia.com/gpu
+      operator: Equal
+      value: 'L40S'
