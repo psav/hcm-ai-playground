@@ -19,6 +19,9 @@ spec:
     maxReplicas: 1
     minReplicas: 1
     model:
+      args:
+        - '--max-model-len'
+        - "65536"
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
