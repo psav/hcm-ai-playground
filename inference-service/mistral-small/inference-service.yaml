@@ -16,6 +16,7 @@ metadata:
     opendatahub.io/dashboard: 'true'
 spec:
   predictor:
+    timeout: 1200
     maxReplicas: 1
     minReplicas: 1
     model:
