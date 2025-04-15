@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources: 
+  - config.secret.yaml
+  - grafana-dev-crb.yaml
+  - grafana-dev-deploy.yaml
+  - grafana-dev-oauthclient.yaml
+  - grafana-dev-route.yaml
+  - grafana-dev-sa.yaml
+  - grafana-dev-svc.yaml
+  - grafana-pvc.yaml

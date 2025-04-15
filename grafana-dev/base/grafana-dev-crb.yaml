@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    observability.open-cluster-management.io/name: observability
+    owner: multicluster-observability-operator
+  name: open-cluster-management:grafana-crb-dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: open-cluster-management:grafana
+subjects:
+- kind: ServiceAccount
+  name: grafana-dev
+  namespace: open-cluster-management-observability
