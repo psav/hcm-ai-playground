@@ -68,7 +68,6 @@ spec:
             cpu: 4m
             memory: 100Mi
         securityContext:
-          fsGroup: 1001100000
           privileged: false
           readOnlyRootFilesystem: true
         terminationMessagePath: /dev/termination-log
@@ -94,7 +93,6 @@ spec:
             cpu: 4m
             memory: 50Mi
         securityContext:
-          fsGroup: 1001100000
           privileged: false
           readOnlyRootFilesystem: true
         terminationMessagePath: /dev/termination-log
@@ -135,7 +133,6 @@ spec:
           timeoutSeconds: 1
         resources: {}
         securityContext:
-          fsGroup: 1001100000
           privileged: false
           readOnlyRootFilesystem: true
         terminationMessagePath: /dev/termination-log
