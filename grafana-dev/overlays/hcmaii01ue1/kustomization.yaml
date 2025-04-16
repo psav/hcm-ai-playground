@@ -3,17 +3,3 @@ kind: Kustomization
 
 resources:
   - ../../base
-
-patches:
-- path: ./patch.oauth.hcmaii01ue1.yaml
-  target:
-    group: oauth.openshift.io
-    kind: OAuthClient
-    version: v1
-    name: grafana-proxy-client-dev
-- path: ./patch.sa.hcmaii01ue1.yaml
-  target:
-    group: ""
-    kind: ServiceAccount
-    version: v1
-    name: grafana-dev

@@ -1,9 +1,0 @@
-- op: replace
-  path: /imagePullSecrets/0/name
-  value: grafana-dockercfg-tfpt5
-- op: replace
-  path: /metadata/annotations/openshift.io~1internal-registry-pull-secret-ref
-  value: grafana-dockercfg-tfpt5
-- op: replace
-  path: /secrets/0/name
-  value: grafana-dockercfg-tfpt5

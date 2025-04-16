@@ -11,6 +11,12 @@ spec:
     path: grafana-dev/overlays/hcmaii01ue1
     repoURL: 'https://github.com/app-sre/hcm-ai-playground'
     targetRevision: main
+    kustomize:
+      configMapGenerator:
+        - name: secret-values
+          literals:
+            - CLUSTER_URL=replace_me_as_a_template_param
+            - TOKEN_NAME=new_token_name
   syncPolicy:
     automated:
       selfHeal: true

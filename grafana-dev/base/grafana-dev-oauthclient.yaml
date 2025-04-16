@@ -4,5 +4,5 @@ kind: OAuthClient
 metadata:
   name: grafana-proxy-client-dev
 redirectURIs:
-- REDACTED
+- $(CLUSTER_URL)
 secret: grafana-proxy-client-dev
