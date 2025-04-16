@@ -1,8 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: oauthclient-argocd-cluster-resources-admin
-  namespace: open-cluster-management-observability
 rules:
   - apiGroups: 
       - "oauth.openshift.io"
@@ -12,15 +11,13 @@ rules:
       - "*"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: oauthclient-cluster-resources-admin
-  namespace: open-cluster-management-observability
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: oauthclient-argocd-cluster-resources-admin
-  namespace: open-cluster-management-observability
 subjects:
 - kind: ServiceAccount
   name: openshift-gitops-argocd-application-controller
