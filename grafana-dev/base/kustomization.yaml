@@ -13,7 +13,7 @@ resources:
   - grafana-pvc.yaml
 
 configMapGenerator:
-- name: secret-values
+- name: config-values
   literals:
     - CLUSTER_URL=supersecret
     - TOKEN_NAME=nothing
@@ -21,7 +21,7 @@ configMapGenerator:
 replacements:
   - source:
       kind: ConfigMap
-      name: secret-values
+      name: config-values
       fieldPath: data.CLUSTER_URL
     targets:
       - select:
@@ -31,7 +31,7 @@ replacements:
           - redirectURIs.0
   - source:
       kind: ConfigMap
-      name: secret-values
+      name: config-values
       fieldPath: data.TOKEN_NAME
     targets:
       - select:
