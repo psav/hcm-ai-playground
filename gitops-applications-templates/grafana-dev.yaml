@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Template
 metadata:
-  name: clowder
+  name: grafana-dev
 objects:
 - apiVersion: argoproj.io/v1alpha1
   kind: Application
