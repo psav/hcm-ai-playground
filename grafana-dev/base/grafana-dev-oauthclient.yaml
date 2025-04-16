@@ -1,0 +1,8 @@
+apiVersion: oauth.openshift.io/v1
+grantMethod: auto
+kind: OAuthClient
+metadata:
+  name: grafana-proxy-client-dev
+redirectURIs:
+- $(CLUSTER_URL)
+secret: grafana-proxy-client-dev

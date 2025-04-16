@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: grafana-dev
+objects:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: hcm-ai-grafana-dev
+    namespace: maas-config
+  spec:
+    destination:
+      name: in-cluster
+    project: default
+    source:
+      path: grafana-dev/base
+      repoURL: 'https://github.com/app-sre/hcm-ai-playground'
+      targetRevision: main
+      kustomize:
+        configMapGenerator:
+          - name: config-values
+            literals:
+              - CLUSTER_URL=${CLUSTER_URL}
+              - TOKEN_NAME=${TOKEN_NAME}
+    syncPolicy:
+      automated:
+        selfHeal: true
+        allowEmpty: false
+      prune: false
+parameters:
+- name: CLUSTER_URL
+  required: true
+- name: TOKEN_NAME
+  required: true
