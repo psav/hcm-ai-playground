@@ -13,7 +13,7 @@ objects:
       name: in-cluster
     project: default
     source:
-      path: grafana-dev/overlays/hcmaii01ue1
+      path: grafana-dev/base
       repoURL: 'https://github.com/app-sre/hcm-ai-playground'
       targetRevision: main
       kustomize:
