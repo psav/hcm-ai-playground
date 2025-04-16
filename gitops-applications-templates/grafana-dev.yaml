@@ -16,20 +16,20 @@ objects:
       path: grafana-dev/base
       repoURL: 'https://github.com/app-sre/hcm-ai-playground'
       targetRevision: main
-      kustomize:
-        configMapGenerator:
-          - name: config-values
-            literals:
-              - CLUSTER_URL=${CLUSTER_URL}
-              - TOKEN_NAME=${TOKEN_NAME}
-            namespace: maas-config
+      directory:
+        jsonnet:
+          tlas:
+          - name: token_name
+            value: ${TOKEN_NAME}
+          - name: redirect_url
+            value: ${REDIRECT_URL}
     syncPolicy:
       automated:
         selfHeal: true
         allowEmpty: false
       prune: false
 parameters:
-- name: CLUSTER_URL
+- name: REDIRECT_URL
   required: true
 - name: TOKEN_NAME
   required: true
