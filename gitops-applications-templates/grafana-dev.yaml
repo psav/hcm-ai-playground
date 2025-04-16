@@ -22,6 +22,7 @@ objects:
             literals:
               - CLUSTER_URL=${CLUSTER_URL}
               - TOKEN_NAME=${TOKEN_NAME}
+            namespace: maas-config
     syncPolicy:
       automated:
         selfHeal: true
