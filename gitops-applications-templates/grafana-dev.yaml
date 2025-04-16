@@ -23,6 +23,7 @@ objects:
             value: ${TOKEN_NAME}
           - name: redirect_url
             value: ${REDIRECT_URL}
+        exclude: kustomization.yaml
     syncPolicy:
       automated:
         selfHeal: true
