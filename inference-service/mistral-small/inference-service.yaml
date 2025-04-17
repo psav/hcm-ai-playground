@@ -10,6 +10,11 @@ metadata:
     sidecar.istio.io/rewriteAppHTTPProbers: 'true'
   name: mistral-small-maas
   namespace: maas
+  finalizers:
+    - inferenceservice.finalizers
+    - odh.inferenceservice.finalizers
+  labels:
+    opendatahub.io/dashboard: 'true'
 spec:
   predictor:
     maxReplicas: 1
