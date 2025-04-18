@@ -8,3 +8,4 @@ resources:
   - nvidia-clusterrole-and-binding.yaml
   - opendatahub-clusterrole-and-binding.yaml
   - serviceaccount-redhat-ods-operator-clusterrole-and-binding.yaml
+  - prometheusrules.clusterrole-and-rolebinding.yaml
