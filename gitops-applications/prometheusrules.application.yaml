@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hcm-ai-inference-service
+  name: hcm-ai-prometheus-rules
   # namespace: maas-config
 spec:
   destination:
