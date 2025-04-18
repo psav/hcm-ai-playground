@@ -12,6 +12,7 @@ metadata:
   namespace: maas
   finalizers:
     - inferenceservice.finalizers
+    - odh.inferenceservice.finalizers
   labels:
     opendatahub.io/dashboard: 'true'
 spec:
