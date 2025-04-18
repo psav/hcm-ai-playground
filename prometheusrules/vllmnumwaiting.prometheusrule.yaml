@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: vllm-request-waiting-alertingrule
+  namespace: maas
+spec:
+  groups:
+    - name: VllmNumRequestsWaiting
+      rules:
+        - alert: VllmNumRequestsWaiting
+          annotations:
+            summary: vLLM has requests waiting
+          expr: 'vllm:num_requests_waiting > 2'
+          for: 5m
+          labels:
+            severity: warning
