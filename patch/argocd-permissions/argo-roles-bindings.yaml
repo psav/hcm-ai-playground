@@ -1,0 +1,35 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: serviceaccounts-maas-argocd-cluster-resources-admin
+  namespace: maas
+rules:
+  - apiGroups: 
+      - ""
+    resources: 
+      - "serviceaccounts"
+      - "secrets"
+    verbs: 
+      - "*"
+  - apiGroups: 
+      - "serving.kserve.io"
+    resources: 
+      - "inferenceservices"
+      - "servingruntimes"
+    verbs: 
+      - "*"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: serviceaccounts-maas-argocd-cluster-resources-admin
+  namespace: maas
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: serviceaccounts-maas-argocd-cluster-resources-admin
+  namespace: maas
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
