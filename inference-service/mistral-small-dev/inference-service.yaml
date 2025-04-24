@@ -1,0 +1,66 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  annotations:
+    openshift.io/display-name: mistral-small-dev-maas
+    security.opendatahub.io/enable-auth: 'true'
+    serving.knative.openshift.io/enablePassthrough: 'true'
+    serving.kserve.io/deploymentMode: Serverless
+    sidecar.istio.io/inject: 'true'
+    sidecar.istio.io/rewriteAppHTTPProbers: 'true'
+  name: mistral-small-dev-maas
+  namespace: maas
+  finalizers:
+    - inferenceservice.finalizers
+    - odh.inferenceservice.finalizers
+  labels:
+    opendatahub.io/dashboard: 'true'
+spec:
+  predictor:
+    maxReplicas: 1
+    minReplicas: 1
+    model:
+      args:
+        - '--max-model-len'
+        - '65536'
+        - '--tool-call-parser'
+        - 'mistral'
+        - '--chat-template'
+        - 'examples/tool_chat_template_mistral_parallel.jinja'
+        - '--limit-mm-per-prompt'
+        - 'image=2'
+      # args:
+      #   - '--tokenizer-mode'
+      #   - 'mistral'
+      #   - '--config-format'
+      #   - 'mistral'
+      #   - '--load-format'
+      #   - 'mistral'
+      #   - '--limit-mm-per-prompt'
+      #   - 'image=4'
+      modelFormat:
+        name: vLLM
+      name: ''
+      resources:
+        limits:
+          cpu: '2'
+          memory: 8Gi
+          nvidia.com/gpu: '1'
+        requests:
+          cpu: '1'
+          memory: 4Gi
+          nvidia.com/gpu: '1'
+      runtime: mistral-small-dev-maas
+      storage:
+        key: models
+        path: models-maas/models--nm-testing--Mistral-Small-3.1-24B-Instruct-2503-FP8-dynamic/
+    tolerations:
+      - effect: NoSchedule
+        key: nvidia-gpu-only
+        operator: Exists
+      - effect: NoSchedule
+        key: nvidia.com/gpu
+        operator: Equal
+        value: L40S
+    annotations:
+      serving.knative.dev/progress-deadline: 30m
