@@ -30,6 +30,12 @@ spec:
         - '/app/data/template/tool_chat_template_mistral_parallel.jinja'
         - '--limit-mm-per-prompt'
         - 'image=2'
+        - '--tokenizer-mode'
+        - 'mistral'
+        - '--config-format'
+        - 'mistral'
+        - '--load-format'
+        - 'mistral'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
