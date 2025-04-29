@@ -37,7 +37,7 @@ spec:
         - '--load-format'
         - 'mistral'
         - '--tokenizer'
-        - '/mnt/models/tekken.json'
+        - '/mnt/models'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
