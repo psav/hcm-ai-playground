@@ -223,7 +223,7 @@ data:
               "useBackend": false
             }
           ],
-          "title": "Prompt Tokens Generated",
+          "title": "Prompt Tokens Generated (5m)",
           "type": "timeseries"
         }
       ],
