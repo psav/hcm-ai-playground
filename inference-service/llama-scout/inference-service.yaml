@@ -27,7 +27,7 @@ spec:
         - '--tool-call-parser'
         - 'pythonic'
         - '--chat-template'
-        - '/app/data/template/tool_chat_template_hermes.jinja'
+        - '/app/data/template/tool_chat_template_gemma3_pythonic.jinja'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
