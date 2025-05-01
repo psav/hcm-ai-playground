@@ -5,5 +5,5 @@ kind: Kustomization
 resources: 
   - ./mistral
   - ./mistral-small
-  - ./mistral-small-dev
+  - ./llama-scout
   - namespace.yaml
