@@ -9,4 +9,3 @@ resources:
   - default-sa.sa.yaml
   - role.yaml
   - role-binding.yaml
-  - authorino.yaml
