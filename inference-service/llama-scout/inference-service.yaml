@@ -23,11 +23,11 @@ spec:
       args:
         - '--max-model-len'
         - '65536'
-        - '--enable-auto-tool-choice'
-        - '--tool-call-parser'
-        - 'pythonic'
-        - '--chat-template'
-        - '/app/data/template/tool_chat_template_gemma3_pythonic.jinja'
+        # - '--enable-auto-tool-choice'
+        # - '--tool-call-parser'
+        # - 'pythonic'
+        # - '--chat-template'
+        # - '/app/data/template/tool_chat_template_gemma3_pythonic.jinja'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
