@@ -26,8 +26,6 @@ spec:
       args:
         - '--max-model-len'
         - '21840'
-        - '--chat-template'
-        - '/mnt/models/chat_template.json'
         # - '--enable-auto-tool-choice'
         # - '--tool-call-parser'
         # - 'pythonic'
