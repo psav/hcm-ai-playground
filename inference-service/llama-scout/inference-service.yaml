@@ -30,6 +30,8 @@ spec:
         - '/app/data/template/tool_chat_template_llama4_json.jinja'
         - '--tensor-parallel-size'
         - '4'
+        - '--dtype'
+        - 'half'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
