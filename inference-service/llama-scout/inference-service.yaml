@@ -30,8 +30,6 @@ spec:
         - '/app/data/template/tool_chat_template_llama4_json.jinja'
         - '--tensor-parallel-size'
         - '4'
-        - '--dtype'
-        - 'half'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
@@ -64,6 +62,6 @@ spec:
       - effect: NoSchedule
         key: nvidia.com/gpu
         operator: Equal
-        value: T4
+        value: L4
     annotations:
       serving.knative.dev/progress-deadline: 30m
