@@ -28,7 +28,7 @@ spec:
       env:
         - name: HF_HOME
           value: /tmp/hf_home
-      image: 'quay.io/psav/vllm:0.8.5-dev4'
+      image: 'quay.io/psav/vllm:0.8.5-reb3'
       name: kserve-container
       ports:
         - containerPort: 8080
