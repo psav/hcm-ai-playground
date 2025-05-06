@@ -22,7 +22,7 @@ spec:
     model:
       args:
         - '--max-model-len'
-        - '8192'
+        - '16384'
         - '--enable-auto-tool-choice'
         - '--tool-call-parser'
         - 'llama4_json'
@@ -52,7 +52,7 @@ spec:
       runtime: llama-scout-maas
       storage:
         key: models
-        path: models-maas/RedHatAI--Llama-4-Scout-17B-16E-Instruct-FP8-dynamic-new
+        path: models-maas/RedHatAI--Llama-4-Scout-17B-16E-Instruct-quantized.w4a16
     tolerations:
       - effect: NoSchedule
         key: nvidia-gpu-only
