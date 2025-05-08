@@ -5,6 +5,7 @@ metadata:
   name: observability
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    mco-disable-alerting: true
 spec:
   enableDownsampling: true
   imagePullPolicy: Always
