@@ -29,7 +29,7 @@ spec:
         - '--chat-template'
         - '/app/data/template/tool_chat_template_llama4_json.jinja'
         - '--tensor-parallel-size'
-        - '8'
+        - '4'
       # args:
       #   - '--tokenizer-mode'
       #   - 'mistral'
@@ -44,11 +44,11 @@ spec:
       name: ''
       resources:
         limits:
-          nvidia.com/gpu: '8'
+          nvidia.com/gpu: '4'
         requests:
           cpu: '2'
           memory: 24Gi
-          nvidia.com/gpu: '8'
+          nvidia.com/gpu: '4'
       runtime: llama-scout-maas
       storage:
         key: models
